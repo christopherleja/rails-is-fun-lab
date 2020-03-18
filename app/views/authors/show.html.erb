@@ -1,0 +1,26 @@
+<%= render "form" %>
+
+<h1> <%=@author.name%> (b. <%= @author.birth_year%>) </h1>
+
+
+
+ <% if @author.books.empty? %>
+   Books: <i> (none) </i>
+   </br>
+<% else %>
+<p> Books: </p>
+<ul>
+<% @author.books.each do |books| %>
+  
+
+<li>
+  <%= link_to books.title, books%>
+</li>
+    <%end%>
+</ul>
+<% end %>
+ 
+<%= link_to "Edit #{@author.name}", edit_author_path %>
+<%= form_tag author_path(@author.id), method: "delete" do %>
+  <%= submit_tag "Delete #{@author.name}" %>
+<% end %>

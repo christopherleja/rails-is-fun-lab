@@ -1,0 +1,13 @@
+<%= render "form" %>
+
+
+<h1>Books!</h1>
+<ul>
+    
+    <% @books.each do |book| %>
+    <li>
+    <%= link_to "#{book.title} (#{book.pages} pages)", book_path(book) %>
+    </li>
+
+<% end %>
+</ul>

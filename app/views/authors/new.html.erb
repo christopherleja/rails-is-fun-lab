@@ -1,0 +1,20 @@
+<%= render "form" %>
+
+
+
+
+<h1> New Author </h1>
+<ul>
+<% if @author.errors.any? %>
+
+<li>
+  <% @author.errors.full_messages.each do |msg| %>
+  <%= msg %>
+  <% end %>
+  </li>
+<% end %>
+</ul>
+
+
+
+<%= render "submit_form" %>

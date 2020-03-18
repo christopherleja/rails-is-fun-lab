@@ -1,0 +1,17 @@
+<%= render "form" %>
+
+<h1> Edit <%= @author.name %> </h1>
+
+<ul>
+<% if @author.errors.any? %>
+
+
+  <% @author.errors.full_messages.each do |msg| %>
+<li>
+  <%= msg %>
+  <% end %>
+  </li>
+<% end %>
+</ul>
+
+<%= render "submit_form"%>
